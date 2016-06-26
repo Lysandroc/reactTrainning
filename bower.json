@@ -1,0 +1,22 @@
+{
+  "name": "react_examples",
+  "authors": [
+    "Lysandro Carioca Braga <lysandroc@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.6",
+    "react": "0.14.3"
+  }
+}
