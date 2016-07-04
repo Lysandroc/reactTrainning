@@ -1,22 +1,34 @@
 
-var Headings = React.createClass({
+var RecentChangesTable = React.createClass({
   render: function () {
-    var headings = this.props.headings.map(function (heading) {
-      return React.createElement(Heading, { heading: heading });
-    });
     return React.createElement(
-      "thead",
-      null,
-      React.createElement(
-        "tr",
-        null,
-        headings
-      )
+      "table",
+      { className: "highlight" },
+      this.props.children
     );
   }
 });
 
-var Heading = React.createClass({
+RecentChangesTable.Headings = React.createClass({
+  render: function () {
+    var headings = this.props.headings.map(function (heading) {
+      return React.createElement(RecentChangesTable.Heading, { heading: heading });
+    });
+    return React.createElement(
+      "thead",
+      null,
+      " ",
+      React.createElement(
+        "tr",
+        null,
+        headings
+      ),
+      " "
+    );
+  }
+});
+
+RecentChangesTable.Heading = React.createClass({
   render: function () {
     return React.createElement(
       "th",
@@ -26,10 +38,10 @@ var Heading = React.createClass({
   }
 });
 
-var Rows = React.createClass({
+RecentChangesTable.Rows = React.createClass({
   render: function () {
     var rows = this.props.rows.map(function (row) {
-      return React.createElement(Row, { changeSet: row });
+      return React.createElement(RecentChangesTable.Row, { changeSet: row });
     });
     return React.createElement(
       "tbody",
@@ -41,7 +53,7 @@ var Rows = React.createClass({
   }
 });
 
-var Row = React.createClass({
+RecentChangesTable.Row = React.createClass({
   render: function () {
     return React.createElement(
       "tr",
@@ -65,7 +77,7 @@ var Row = React.createClass({
   }
 });
 
-var Grid = React.createClass({
+var App = React.createClass({
   render: function () {
     return React.createElement(
       "div",
@@ -76,10 +88,11 @@ var Grid = React.createClass({
         this.props.title
       ),
       React.createElement(
-        "table",
-        { className: "highlight" },
-        React.createElement(Headings, { headings: this.props.headings }),
-        React.createElement(Rows, { rows: this.props.rows })
+        RecentChangesTable,
+        null,
+        "//An array of children, by default react creates properties called \"children\"",
+        React.createElement(RecentChangesTable.Headings, { headings: this.props.headings }),
+        React.createElement(RecentChangesTable.Rows, { rows: this.props.rows })
       ),
       React.createElement(
         "a",

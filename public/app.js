@@ -1,3 +1,3 @@
-ReactDOM.render(React.createElement(Grid, { title: title,
+ReactDOM.render(React.createElement(App, { title: title,
     headings: headings,
     rows: data }), document.getElementById('app'));
