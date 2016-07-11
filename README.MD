@@ -1,9 +1,11 @@
-requirement: babel-cli (version 6.10.1)
 
-execute: 
-bower install
-npm install
-npm run transform 
+npm i
+npm run dev 
+npm run prod
+npm run server
 
- TODO:
-  - add webpack to transform jsx in js 
+We use npm to all the dependecies!
+You don't need global dependency!
+
+You can access the serve of web app on 
+http://localhost:8080/webpack-dev-server/

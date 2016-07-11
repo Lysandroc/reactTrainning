@@ -1,3 +1,8 @@
+      
+var headings = ['Ultima alteracao', 'Responsavel', 'Resumo'];
+
+var title =  'Historico de alteracoes';
+
 var data = [{ "when": "2 dias atras",
                 "who": "Lysandro",
                 "description": "Alterou o jcompany"
@@ -12,6 +17,3 @@ var data = [{ "when": "2 dias atras",
                 "who": "Lysandro",
                 "description": "Inclui recurso no conferencia loja"
 }];
-      
-var headings = ['Ultima alteracao', 'Responsavel', 'Resumo'];
-var title =  'Historico de alteracoes';
